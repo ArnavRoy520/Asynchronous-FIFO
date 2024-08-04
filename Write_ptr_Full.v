@@ -64,6 +64,6 @@ module Write_ptr_Full #(
             full <= buff_full;
     end
     /// if the w_ptr 's MSB is high(different) and rest all the bits are same as the rd_ptr value then we can say that the stack is full
-    assign buff_full = (w_ptr_gray_nxt == {~rd_ptr_gray_sync[NUM_BITS-1:NUM_BITS-2], rd_ptr_gray_sync[NUM_BITS-3:0]});
+    assign buff_full = (w_ptr_gray_nxt == {~rd_ptr_gray_sync[NUM_BITS-1], rd_ptr_gray_sync[NUM_BITS-2:0]});
 
 endmodule

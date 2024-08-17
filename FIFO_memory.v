@@ -30,7 +30,7 @@ module FIFO_memory #(
   input full, empty,
   output reg [DATA_BITS-1:0] Data_out
     );
-  reg [DATA_BITS-1:0] FIFO[0:DEPTH-1];
+    reg [DATA_BITS-1:0] FIFO[DEPTH-1:0];
   
   always@(posedge w_clk) begin
     if(w_en & !full) begin
